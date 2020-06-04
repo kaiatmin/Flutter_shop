@@ -154,10 +154,9 @@ class _CategoryScreenState extends State<CategoryScreen>
               new CachedNetworkImage(
                 width: 64,
                 height: 64,
-                placeholder: new CircularProgressIndicator(),
+                placeholder: (context, url) => new CircularProgressIndicator(),
                 imageUrl: 'https://picsum.photos/64/64?image=${i}',
                 // 图片引用
-                errorWidget: new Icon(Icons.error),
               ),
               SizedBox(
                 height: 5,

@@ -28,9 +28,9 @@ class _MineScreenState extends State<MineScreen>
                 leading: CachedNetworkImage(
                   width: 48,
                   height: 48,
-                  placeholder: new CircularProgressIndicator(),
+                  placeholder: (context, url) =>
+                      new CircularProgressIndicator(),
                   imageUrl: 'https://picsum.photos/64/64',
-                  errorWidget: new Icon(Icons.error),
                 ),
                 title: new Text("Tony"),
                 subtitle: new Text("各种图标显示处"),
@@ -40,7 +40,10 @@ class _MineScreenState extends State<MineScreen>
             ),
             new Container(
               child: new ListTile(
-                leading: new Icon(Icons.add_a_photo,color: Colors.green[400],),
+                leading: new Icon(
+                  Icons.add_a_photo,
+                  color: Colors.green[400],
+                ),
                 title: new Text("我发布的"),
               ),
               margin: EdgeInsets.only(top: 16),
@@ -48,28 +51,40 @@ class _MineScreenState extends State<MineScreen>
             ),
             new Container(
               child: new ListTile(
-                leading: new Icon(Icons.business_center,color: Colors.blue[400],),
+                leading: new Icon(
+                  Icons.business_center,
+                  color: Colors.blue[400],
+                ),
                 title: new Text("我买到的"),
               ),
               color: Colors.white,
             ),
             new Container(
               child: new ListTile(
-                leading: new Icon(Icons.airport_shuttle,color: Colors.deepOrangeAccent[400],),
+                leading: new Icon(
+                  Icons.airport_shuttle,
+                  color: Colors.deepOrangeAccent[400],
+                ),
                 title: new Text("我卖出的"),
               ),
               color: Colors.white,
             ),
             new Container(
               child: new ListTile(
-                leading: new Icon(Icons.favorite,color: Colors.red[400],),
+                leading: new Icon(
+                  Icons.favorite,
+                  color: Colors.red[400],
+                ),
                 title: new Text("我喜欢的"),
               ),
               color: Colors.white,
             ),
             new Container(
               child: new ListTile(
-                leading: new Icon(Icons.settings,color: Colors.orange[400],),
+                leading: new Icon(
+                  Icons.settings,
+                  color: Colors.orange[400],
+                ),
                 title: new Text("设置"),
               ),
               color: Colors.white,

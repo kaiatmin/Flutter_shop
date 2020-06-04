@@ -155,52 +155,56 @@ class _MessageScreenState extends State<MessageScreen>
               child: CachedNetworkImage(
                 width: 48,
                 height: 48,
-                placeholder: new CircularProgressIndicator(),
+                placeholder: (context, url) => new CircularProgressIndicator(),
                 imageUrl: 'https://picsum.photos/64/64?image=${index}',
-                errorWidget: new Icon(Icons.error),
               ),
             ),
             Expanded(
                 child: GestureDetector(
-                  onTap: (){ _onTap("我是数据"); },
+                    onTap: () {
+                      _onTap("我是数据");
+                    },
                     child: Container(
-              padding: EdgeInsets.only(left: 16, right: 16, bottom: 8),
-              decoration: BoxDecoration(
-                  border: Border(
-                      bottom: BorderSide(width: 0.2, color: Colors.black))),
-              child: Row(
-                children: <Widget>[
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        Text(
-                          "我是昵称",
-                          style: TextStyle(
-                              fontSize: 16, fontWeight: FontWeight.bold),
-                        ),
-                        Text(
-                          "下拉看看效果  ----我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容",
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
-                          style: TextStyle(color: Colors.grey[700]),
-                        ),
-                        Text("3天前",
-                            style: TextStyle(
-                                fontSize: 12, color: Colors.grey[700])),
-                      ],
-                    ),
-                  ),
-                  CachedNetworkImage(
-                    width: 64,
-                    height: 64,
-                    placeholder: new CircularProgressIndicator(),
-                    imageUrl: 'https://picsum.photos/64/64?image=${index}',
-                    errorWidget: new Icon(Icons.error),
-                  )
-                ],
-              ),
-            )))
+                      padding: EdgeInsets.only(left: 16, right: 16, bottom: 8),
+                      decoration: BoxDecoration(
+                          border: Border(
+                              bottom:
+                                  BorderSide(width: 0.2, color: Colors.black))),
+                      child: Row(
+                        children: <Widget>[
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: <Widget>[
+                                Text(
+                                  "我是昵称",
+                                  style: TextStyle(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                                Text(
+                                  "下拉看看效果  ----我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容",
+                                  maxLines: 1,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: TextStyle(color: Colors.grey[700]),
+                                ),
+                                Text("3天前",
+                                    style: TextStyle(
+                                        fontSize: 12, color: Colors.grey[700])),
+                              ],
+                            ),
+                          ),
+                          CachedNetworkImage(
+                            width: 64,
+                            height: 64,
+                            placeholder: (context, url) =>
+                                new CircularProgressIndicator(),
+                            imageUrl:
+                                'https://picsum.photos/64/64?image=${index}',
+                          )
+                        ],
+                      ),
+                    )))
           ],
         ));
 

@@ -29,7 +29,7 @@ android {
         sourceCompatibility 1.8
         targetCompatibility 1.8
     }
-    compileSdkVersion 27
+    compileSdkVersion 28
 
     lintOptions {
         disable 'InvalidPackage'
